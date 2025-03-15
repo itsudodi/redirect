@@ -7,12 +7,14 @@
     <script>
         setTimeout(() => {
             let url = "https://udodi.carrd.co";
-            window.location.replace(url); // Forces full redirect
+            let win = window.open(url, "_blank"); // Try opening in a new tab
+            if (!win) {
+                window.location.href = url; // Fallback if pop-ups are blocked
+            }
         }, 100);
     </script>
 </head>
 <body>
-    <p>Redirecting... If nothing happens, <a href="intent://udodi.carrd.co#Intent;scheme=https;package=com.android.chrome;end;">Open in Browser</a>
-.</p>
+    <p>Redirecting... If nothing happens, <a href="https://udodi.carrd.co" target="_blank">click here</a>.</p>
 </body>
 </html>
